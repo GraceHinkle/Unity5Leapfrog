@@ -1,5 +1,10 @@
 Grace Hinkle
 
+Unity 6
+I added in the two scoring systems and the winner text by making the new UIManager scripts. Player 1's score is displayed top left and Player 2's is top right. I made sure they each said the same thing and kept saying the same thing even as the score went up. I also made sure they were visible, but not too big or distracting.
+Then, for the winner score I added into the UI manager scripts, and made sure it was really big and bright, and only displayed once 5 points were hit by a player. 
+
+Unity 5
 For my Unity 5 Leapfrog game, I decided the iterations I would make would visual focussed. I did this for two reasons. 
 1 being that I think a lot of people assume the only "proper" iterations to a game must be in the game functions themselves, which are great, but isn't true.
 the 2nd and more honest answer is that i was unable to attend class on the monday where we started this project, and have had continuous issues with the code trying to get it to work.
