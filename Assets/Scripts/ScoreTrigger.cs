@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScoreTrigger : MonoBehaviour
 {
+    public UIManager uiManager; // Reference to UIManager script
     public P1Control player; // Reference to the player whose score will be incremented when jumping over the other player
 
     // Keep track of whether this trigger has been activated
@@ -24,7 +25,7 @@ public class ScoreTrigger : MonoBehaviour
         if (otherPlayer.IsJumping() && player.canScore)
         {
             // Increment the score of the player associated with this trigger
-            player.IncrementScore();
+            uiManager.AddScore(); // Call UIManager method to add score and update UI text
 
             // Set triggered to true to prevent further activations
             triggered = true;
@@ -33,8 +34,16 @@ public class ScoreTrigger : MonoBehaviour
             Debug.Log(player.gameObject.name + " jumped over " + otherPlayer.gameObject.name + "! " + player.gameObject.name + "'s score: " + player.GetScore());
         }
     }
-}
 
+    // Reset the triggered flag when the player exits the trigger area
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            triggered = false;
+        }
+    }
+}
 
 // using System.Collections;
 // using System.Collections.Generic;
@@ -42,64 +51,35 @@ public class ScoreTrigger : MonoBehaviour
 
 // public class ScoreTrigger : MonoBehaviour
 // {
-//     public P1Control player1;
-//     public P2Control player2;
+//     public P1Control player; 
+//     public UIManager uiManager; // Reference to UIManager script
 
 //     private bool triggered = false;
-//     private bool scored = false; // New boolean to track whether a score has been awarded
-//     private GameObject jumpingPlayer; // Track the player who is jumping
 
-//     void OnTriggerEnter(Collider other)
+//     private void OnTriggerEnter(Collider other)
 //     {
-//         if (triggered || scored)
+        
+//         if (triggered || !other.CompareTag("Player"))
+//         {
 //             return;
-
-//         if (other.CompareTag("Player"))
-//         {
-//             if (other.GetComponent<P1Control>() != null)
-//             {
-//                 player1 = other.GetComponent<P1Control>();
-//                 player2 = null;
-//             }
-//             else if (other.GetComponent<P2Control>() != null)
-//             {
-//                 player2 = other.GetComponent<P2Control>();
-//                 player1 = null;
-//             }
-
-//             if (player1 != null)
-//             {
-//                 if (player2 != null && player2.IsJumping())
-//                 {
-//                     jumpingPlayer = other.gameObject;
-//                     player1.IncrementScore();
-//                     triggered = true;
-//                     scored = true; // Set scored to true when a score is awarded
-//                     Debug.Log(player1.gameObject.name + " jumped over " + player2.gameObject.name + "! " + player1.gameObject.name + "'s score: " + player1.GetScore());
-//                 }
-//             }
-//             else if (player2 != null)
-//             {
-//                 if (player1 != null && player1.IsJumping())
-//                 {
-//                     jumpingPlayer = other.gameObject;
-//                     player2.IncrementScore();
-//                     triggered = true;
-//                     scored = true; // Set scored to true when a score is awarded
-//                     Debug.Log(player2.gameObject.name + " jumped over " + player1.gameObject.name + "! " + player2.gameObject.name + "'s score: " + player2.GetScore());
-//                 }
-//             }
 //         }
-//     }
 
-//     // Reset scored flag when the player exits the trigger
-//     void OnTriggerExit(Collider other)
-//     {
-//         if (other.gameObject == jumpingPlayer)
+        
+//         P2Control otherPlayer = other.GetComponent<P2Control>();
+
+        
+//         if (otherPlayer.IsJumping() && player.canScore)
 //         {
-//             scored = false;
-//             triggered = false;
-//             jumpingPlayer = null;
+            
+//             player.IncrementScore();
+//             // Increment the score of the player associated with this trigger
+//             uiManager.AddScore(); // Call UIManager method to add score and update UI text
+
+            
+//             triggered = true;
+
+            
+//             Debug.Log(player.gameObject.name + " jumped over " + otherPlayer.gameObject.name + "! " + player.gameObject.name + "'s score: " + player.GetScore());
 //         }
 //     }
 // }
