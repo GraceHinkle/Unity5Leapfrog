@@ -15,6 +15,8 @@ public class P1Control : MonoBehaviour
 
     private int score = 0; // Player's score
     public bool canScore;
+    //parameter contact;
+    public float pushForce = 3.0f;
 
     void Awake()
     {
@@ -76,6 +78,14 @@ public class P1Control : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+        //contact = hit;
+        Rigidbody body = hit.collider.attachedRigidbody;
+        if (body != null && !body.isKinematic) {
+        body.velocity = hit.moveDirection * pushForce;
+        }
     }
 }
 
