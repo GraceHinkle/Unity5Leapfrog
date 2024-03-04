@@ -59,13 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Scoring.cs" />
+    <Compile Include="Assets\Scripts\Unity7Manager\Managers.cs" />
+    <Compile Include="Assets\Scripts\Unity7Manager\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\2ScoreTrigger.cs" />
     <Compile Include="Assets\Scripts\UIManager2.cs" />
     <Compile Include="Assets\Scripts\ScoreTrigger.cs" />
     <Compile Include="Assets\Scripts\Player2M.cs" />
     <Compile Include="Assets\Scripts\Collectable.cs" />
+    <Compile Include="Assets\Scripts\Unity7Manager\ManagerStatus.cs" />
     <Compile Include="Assets\Scripts\Player1M.cs" />
+    <Compile Include="Assets\Scripts\BasicUI.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Unity7Manager\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Unity7Manager\IGameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

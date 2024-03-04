@@ -1,12 +1,26 @@
+// Collectables Script
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class CollectibleItem : MonoBehaviour
 {
     [SerializeField] string itemName;
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log($"Item collected: {itemName}");
-        Destroy(this.gameObject);
+    
+    void OnTriggerEnter(Collider other) {
+        Managers.Inventory.AddItem(itemName); // Add item to inventory when collected
+        Destroy(gameObject);
     }
 }
+
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// public class CollectibleItem : MonoBehaviour
+// {
+//     [SerializeField] string itemName;
+//     void OnTriggerEnter(Collider other) {
+//         Managers.Inventory.AddItem(itemName);
+//         Destroy(this.gameObject);
+//         }
+// }
