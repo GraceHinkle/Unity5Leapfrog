@@ -1,5 +1,10 @@
 Grace Hinkle
 
+Unity 7:
+For this assignment we were asked to add moveable blocks, collectable items, a general inventory system that was connected to a UI to show the items we collected, and reconfigure our old scoring script to work with out new UI. I was able to get all but that very last one working. I got a moveable block in the game, hard to reach green block at the top, that is moevable and is going to because more usable in the future. I added coins (and a fake coin for testing that's just a yellow orb) that can be collected. At the moment when one player pick it up, it shows for both players instead of that one, and I plan to fix that in the future. But I don't expect to lose points on that since there was nothing in the instructions or in class saying we had to have them separated yet, just implemented into the game with the UI working.
+Now I got almost all of part 3 done. i got all the scripts downloaded and made sure they worked with my previous scripts. I couldn't however get my old scripts rewroked properly *yet* to have them *completely* work on the new UI. I tried many times, asked friends to help and even went into the lab on Saturday to figure it out, but nothing I did would make it work. So what I decided to turn it in like this. Everything is functioning perfectly independently, and all the scripts, moving object and coins that needed to be added have been.
+If you have any suggestions on how to fix my problem please let me know.
+
 Unity 6:
 I added in the two scoring systems and the winner text by making the new UIManager scripts. Player 1's score is displayed top left and Player 2's is top right. I made sure they each said the same thing and kept saying the same thing even as the score went up. I also made sure they were visible, but not too big or distracting.
 Then, for the winner score I added into the UI manager scripts, and made sure it was really big and bright, and only displayed once 5 points were hit by a player. 
