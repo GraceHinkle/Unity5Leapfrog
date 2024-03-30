@@ -3,11 +3,9 @@ using UnityEngine.UI; // Import Unity UI namespace
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]
-    private Text _p1Score;
+    [SerializeField] private Text _p1Score;
 
-    [SerializeField]
-    private Text _winner;
+    [SerializeField] private Text _winner;
 
     private int _score = 0; // Player's score
 
@@ -27,7 +25,7 @@ public class UIManager : MonoBehaviour
         _p1Score.text = "P1 Score: " + _score.ToString(); // Convert score to string and update text
 
         // Check if the player has won
-        if (_score >= 5)
+        if (_score >= 10)
         {
             ShowWinnerText(); // Show "You Win" text
             //_winner.text = "You Win!"; // Display "You Win" text

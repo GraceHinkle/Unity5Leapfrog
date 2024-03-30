@@ -4,16 +4,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerManager))]
 [RequireComponent(typeof(InventoryManager))]
+[RequireComponent(typeof(Timer))] // Add this line to require Timer component
 
 public class Managers : MonoBehaviour {
 	public static PlayerManager Player {get; private set;}
 	public static InventoryManager Inventory {get; private set;}
+	public static Timer Timer {get; private set;} // Add reference to Timer script
 
 	private List<IGameManager> startSequence;
 	
 	void Awake() {
 		Player = GetComponent<PlayerManager>();
 		Inventory = GetComponent<InventoryManager>();
+		Timer = GetComponent<Timer>(); // Assign reference to Timer component
 
 		startSequence = new List<IGameManager>();
 		startSequence.Add(Player);
@@ -49,5 +52,8 @@ public class Managers : MonoBehaviour {
 		}
 		
 		Debug.Log("All managers started up");
+
+		// Start the timer when all managers are initialized
+        Timer.StartTimer();
 	}
 }

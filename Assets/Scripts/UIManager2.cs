@@ -27,7 +27,7 @@ public class UIManager2 : MonoBehaviour
         _p2Score.text = "P2 Score: " + _score.ToString(); // Convert score to string and update text
 
         // Check if the player has won
-        if (_score >= 5)
+        if (_score >= 10)
         {
             ShowWinnerText(); // Show "You Win" text
         }
